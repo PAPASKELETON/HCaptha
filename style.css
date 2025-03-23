@@ -1,0 +1,50 @@
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f4f4f4;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+}
+
+.captcha-container {
+	background: #fff;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.1);
+	text-align: center;
+}
+
+/* Updated image captcha container to grid layout */
+#image-captcha {
+	display: grid;
+	grid-template-columns: repeat(3, 100px);
+	gap: 10px;
+	justify-content: center;
+	margin: 20px auto;
+}
+
+.captcha-image {
+	width: 100px;
+	height: 100px;
+	object-fit: cover;
+	cursor: pointer;
+	border: 2px solid transparent;
+	transition: border 0.3s;
+}
+
+.captcha-image.selected {
+	border: 2px solid #2196F3;
+}
+
+/* New button styling */
+#verify-btn, #reset-btn, #discord-btn {
+	margin-top: 10px;
+	padding: 10px 20px;
+	border: none;
+	background: #2196F3;
+	color: white;
+	border-radius: 5px;
+	cursor: pointer;
+}

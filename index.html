@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>HCaptha</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="captcha-container">
+		<h2>HCaptha Verification</h2>
+		<p>Select all images that contain a dog:</p>
+		<div id="image-captcha">
+			<!-- 9 images: dog images (data-valid="true") and bear images (data-valid="false") -->
+			<img src="https://placedog.net/100/100?random=1" class="captcha-image" data-valid="true">
+			<img src="https://placebear.com/100/100?random=5" class="captcha-image" data-valid="false">
+			<img src="https://placedog.net/101/100?random=2" class="captcha-image" data-valid="true">
+			<img src="https://placebear.com/101/100?random=6" class="captcha-image" data-valid="false">
+			<img src="https://placedog.net/100/101?random=3" class="captcha-image" data-valid="true">
+			<img src="https://placebear.com/102/100?random=7" class="captcha-image" data-valid="false">
+			<img src="https://placedog.net/102/102?random=4" class="captcha-image" data-valid="true">
+			<img src="https://placebear.com/103/100?random=8" class="captcha-image" data-valid="false">
+			<img src="https://placebear.com/100/103?random=9" class="captcha-image" data-valid="false">
+		</div>
+		<p id="message"></p>
+		<button id="verify-btn">Verify Captcha</button>
+		<button id="reset-btn" style="display:none;">Reset Captcha</button>
+		<button id="discord-btn" style="display:none;">Send to Discord</button>
+	</div>
+	<script src="script.js"></script>
+</body>
+</html>
