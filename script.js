@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	const message = document.getElementById('message');
 	
 	// Replace with your actual Discord webhook URL
-	const discordWebhookUrl = 'https://discord.com/api/webhooks/your_webhook_url';
+	const discordWebhookUrl = 'https://discordapp.com/api/webhooks/1353385196904513676/5OIDqpue-elng3SYYCUIO3KK1Gtx18SDCWx6_8UASHP79uzv4vKCfUM9zGyR_ZPBRRQ8';
 	
 	// Function to shuffle the images order in the container
 	function shuffleImages() {
@@ -60,6 +60,9 @@ document.addEventListener('DOMContentLoaded', function() {
 	// Automatically shuffle images on page load
 	shuffleImages();
 	
+	// Log site access on page load
+	logSiteAccess();
+	
 	// Send verification result to Discord
 	discordBtn.addEventListener('click', function() {
 		fetch(discordWebhookUrl, {
@@ -76,3 +79,17 @@ document.addEventListener('DOMContentLoaded', function() {
 		});
 	});
 });
+
+function logSiteAccess(){
+	// Log message using the same Discord webhook URL as captcha verification
+	const logData = {
+		content: `HCaptha site accessed at ${new Date().toISOString()}`
+	};
+	fetch(discordWebhookUrl, {
+		method: 'POST',
+		headers: { 'Content-Type': 'application/json' },
+		body: JSON.stringify(logData)
+	})
+	.then(() => console.log("Site access logged to Discord."))
+	.catch((err) => console.error("Failed to log site access:", err));
+}
